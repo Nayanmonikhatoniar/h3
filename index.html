@@ -32,6 +32,7 @@
       color: #555;
       margin-top: 0.5rem;
     }
+
     nav {
       position: fixed;
       left: 0;
@@ -51,10 +52,12 @@
     nav a:hover {
       background-color: #dddddd;
     }
+
     main {
       margin-left: 220px;
       padding: 2rem;
     }
+
     .collapsible {
       background-color: #f9f9f9;
       color: #333;
@@ -67,9 +70,11 @@
       font-size: 1rem;
       margin-top: 1rem;
     }
+
     .active, .collapsible:hover {
       background-color: #e0e0e0;
     }
+
     .content-collapsible {
       padding: 0 18px;
       display: none;
@@ -78,12 +83,43 @@
       border: 1px solid #ccc;
       margin-bottom: 1rem;
     }
+
     footer {
       text-align: center;
       padding: 1rem;
       border-top: 1px solid #ccc;
       font-size: 0.8rem;
       color: #888;
+    }
+
+    /* Mobile responsive adjustments */
+    @media (max-width: 768px) {
+      nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        flex: 1 1 auto;
+        text-align: center;
+        padding: 0.75rem;
+        border-right: 1px solid #ccc;
+      }
+
+      nav a:last-child {
+        border-right: none;
+      }
+
+      main {
+        margin-left: 0;
+        padding: 1rem;
+      }
     }
   </style>
 </head>
@@ -94,6 +130,7 @@
     <a href="#ideas">YT Ideas</a>
     <a href="#books">Book Recommendations</a>
     <a href="#papers">Paper PDFs</a>
+    <a href="#courses">Courses</a>
     <a href="mailto:khatoniarnayanmoni@gmail.com">Email</a>
     <a href="https://github.com/NayanmoniKhatoniar" target="_blank">GitHub</a>
   </nav>
@@ -106,12 +143,13 @@
   <main>
     <section class="intro" id="intro">
       <p>
-        I am Nayanmoni, I have a deep passion for abstract structures and the underlying patterns that drive dynamic behavior in nature and computation. I am primarily interested in computational topology, manifold theory, dynamical systems, and chaos theory. These domains bridge pure mathematics with real-world systems, enabling a structural understanding of evolution, flow, and complexity.
+        I am Nayanmoni, I have a deep passion for abstract structures and the underlying patterns that drive dynamic behavior in nature and computation. I am primarily interested in computational topology, manifold theory, dynamical systems, and chaos theory.
       </p>
       <p>
-        My current focus is on applying topological and geometric methods to study complex systems and nonlinear dynamics. I enjoy exploring how these abstract tools reveal deep insights in systems ranging from neural networks to fluid flows. With a mix of mathematical rigor and algorithmic construction, I aspire to contribute to both theoretical understanding and practical innovation.
+        My current focus is on applying topological and geometric methods to study complex systems and nonlinear dynamics. I enjoy exploring how these abstract tools reveal deep insights in systems ranging from neural networks to fluid flows.
       </p>
     </section>
+
     <section class="content" id="projects">
       <h2>Current Research/Projects</h2>
       <ul>
@@ -160,23 +198,42 @@
         <p>Currently working...</p>
       </div>
     </section>
+
+    <section class="content" id="courses">
+      <h2>Courses I Take</h2>
+      <ul>
+        <li><strong>Mathematics I (M1)</strong>
+          <ul>
+            <li>Complex Analysis</li>
+            <li>Ordinary Differential Equations</li>
+            <li>Sequences and Series</li>
+          </ul>
+        </li>
+        <li><strong>Mathematics II (M2)</strong>
+          <ul>
+            <li>Multivariable Calculus</li>
+            <li>Vector Calculus</li>
+            <li>Linear Algebra</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
   </main>
+
   <footer>
     &copy; 2025 Nayanmoni Khatoniar. All rights reserved.
   </footer>
+
   <script>
     const collapsibles = document.querySelectorAll(".collapsible");
     collapsibles.forEach(button => {
       button.addEventListener("click", () => {
         button.classList.toggle("active");
         const content = button.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
+        content.style.display = content.style.display === "block" ? "none" : "block";
       });
     });
   </script>
 </body>
 </html>
+
